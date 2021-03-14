@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "urls": [
+    "https://www.google.com/maps/dir/Alexandria,+Egypt/Aswan,+Aswan+Governorate,+Egypt/@34.5582996,6.7990261,7541495m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!2m2!1d29.9187387!2d31.2000924!1m5!1m1!1s0x14367b5ab1a30e5f:0xfb109fe337cabccb!2m2!1d32.8998293!2d24.088938!3e2",
+    "https://goo.gl/maps/HrK4oFgriWbzXEqw9",
+    "https://bit.ly/3lcCqzp"
+  ],
   "scripts": {
+    "start:debug": "set PWDEBUG=1 && set DEBUG=pw:api && node src/main.js screenshot https://bit.ly/3lcCqzp -d src/captures",
+    "start": "node src/main.js screenshot https://bit.ly/3lcCqzp -d src/captures",
+    "esbuild": "esbuild",
+    "build": "esbuild src/main.js --bundle --outfile=build/out.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +21,9 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^7.1.0",
-    "playwright": "^1.9.2"
+    "esbuild": "^0.9.2",
+    "playwright": "^1.9.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-const { Command, Option } = require('commander');
-const fs = require('fs');
-const path = require('path');
-const pw = require('playwright');
-const { promisify } = require('util');
+import { Command, Option } from 'commander';
+import fs from 'fs';
+import path from 'path';
+import pw from 'playwright';
+import { promisify } from 'util';
+
+import { screenshot } from './crawl.js';
 
 const wf = promisify(fs.writeFile);
 
@@ -14,7 +16,7 @@ opt_browser = opt_browser.choices(['chromium', 'firefox', 'webkit']);
 opt_browser = opt_browser.default('chromium');
 
 let opt_dest = new Option('-d, --dest <folder>', 'destination folder for captures');
-opt_dest = opt_dest.default('captures');
+opt_dest = opt_dest.default('../captures');
 
 program
 .version('0.0.1')
@@ -23,7 +25,7 @@ program
 .description('create a screeshot of url')
 .addOption(opt_browser)
 .addOption(opt_dest)
-.action(screenshot);
+.action((url, opts, command) => screenshot(url, opts.dest));
 
 
 

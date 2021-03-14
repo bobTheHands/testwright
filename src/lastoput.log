@@ -1,0 +1,51 @@
+w@WEISK MINGW64 ~/projects/crawl/testwright (main)
+$ yarn start:debug
+yarn run v1.22.10
+$ set PWDEBUG=1 && set DEBUG=pw:api && node src/main.js screenshot https://bit.ly/3lcCqzp -d src/captures
+2021-03-14T12:02:38.733Z pw:api => browserType.launch started
+2021-03-14T12:02:38.975Z pw:api <= browserType.launch succeeded
+2021-03-14T12:02:38.975Z pw:api => browser.newContext started
+2021-03-14T12:02:38.985Z pw:api <= browser.newContext succeeded
+2021-03-14T12:02:38.985Z pw:api => browserContext.newPage started
+2021-03-14T12:02:39.410Z pw:api   "load" event fired
+2021-03-14T12:02:39.413Z pw:api   "domcontentloaded" event fired
+2021-03-14T12:02:39.459Z pw:api   navigated to "https://playwright/index.html"
+2021-03-14T12:02:39.603Z pw:api   "domcontentloaded" event fired
+2021-03-14T12:02:39.627Z pw:api   "load" event fired
+2021-03-14T12:02:39.773Z pw:api <= browserContext.newPage succeeded
+2021-03-14T12:02:39.773Z pw:api => page.goto started
+2021-03-14T12:02:40.129Z pw:api   "networkidle" event fired
+2021-03-14T12:02:46.854Z pw:api navigating to "https://bit.ly/3lcCqzp", waiting until "load"
+2021-03-14T12:02:48.062Z pw:api   navigated to "https://www.google.com/maps/dir/Alexandria,+Egypt/Aswan,+Aswan+Governorate,+Egypt/@34.5582996,6.7990261,7541495m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!2m2!1d29.9187387!2d31.2000924!1m5!1m1!1s0x14367b5ab1a30e5f:0xfb109fe337cabccb!2m2!1d32.8998293!2d24.088938!3e2?shorturl=1"
+2021-03-14T12:02:48.878Z pw:api   "domcontentloaded" event fired
+2021-03-14T12:02:49.335Z pw:api   "load" event fired
+2021-03-14T12:02:49.335Z pw:api <= page.goto succeeded
+2021-03-14T12:02:49.336Z pw:api => page.waitForSelector started
+2021-03-14T12:02:49.361Z pw:api waiting for selector "#introAgreeButton" to be visible
+2021-03-14T12:02:49.991Z pw:api   navigated to "https://www.google.com/maps/dir/Alexandria,+Egypt/Aswan,+Aswan+Governorate,+Egypt/@34.5582996,6.7990261,7541495m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!2m2!1d29.9187387!2d31.2000924!1m5!1m1!1s0x14367b5ab1a30e5f:0xfb109fe337cabccb!2m2!1d32.8998293!2d24.088938!3e2?shorturl=1"
+2021-03-14T12:02:50.863Z pw:api   navigated to "https://consent.google.com/intro/?continue=https://www.google.com/maps?shorturl%3D1&origin=https://www.google.com&if=1&gl=NL&hl=nl&pc=m&uxe=4423402"
+2021-03-14T12:02:51.141Z pw:api   "domcontentloaded" event fired
+2021-03-14T12:02:51.796Z pw:api   navigated to "https://consent.google.com/intro/?continue=https://www.google.com/maps?shorturl%3D1&origin=https://www.google.com&if=1&gl=NL&hl=nl&pc=m&uxe=4423402"
+2021-03-14T12:02:51.849Z pw:api   "load" event fired
+2021-03-14T12:02:53.248Z pw:api   navigated to "https://www.google.com/maps/dir/Alexandria,+Egypt/Aswan,+Aswan+Governorate,+Egypt/@34.5582996,6.7990261,11589918m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!2m2!1d29.9187387!2d31.2000924!1m5!1m1!1s0x14367b5ab1a30e5f:0xfb109fe337cabccb!2m2!1d32.8998293!2d24.088938!3e2"
+2021-03-14T12:02:54.500Z pw:api   navigated to "https://www.google.com/maps/dir/Alexandria,+Egypt/Aswan,+Aswan+Governorate,+Egypt/@34.5582996,6.7990261,11589918m/data=!3m1!1e3!4m14!4m13!1m5!1m1!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!2m2!1d29.9187387!2d31.2000924!1m5!1m1!1s0x14367b5ab1a30e5f:0xfb109fe337cabccb!2m2!1d32.8998293!2d24.088938!3e2"
+2021-03-14T12:02:55.887Z pw:api   "networkidle" event fired
+2021-03-14T12:03:16.396Z pw:api <= page.waitForSelector failed
+page.waitForSelector: Protocol error (Runtime.awaitPromise): The page has been closed.
+=========================== logs ===========================
+waiting for selector "#introAgreeButton" to be visible
+============================================================
+Note: use DEBUG=pw:api environment variable to capture Playwright logs.Error
+    at Object.captureStackTrace (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\utils\stackTrace.js:48:19)
+    at Connection.sendMessageToServer (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\connection.js:69:48)
+    at Proxy.<anonymous> (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\channelOwner.js:64:61)
+    at C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\frame.js:202:42
+    at Frame._wrapApiCall (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\channelOwner.js:77:34)
+    at Frame.waitForSelector (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\frame.js:197:21)
+    at C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\page.js:241:60
+    at Page._attributeToPage (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\page.js:231:20)
+    at Page.waitForSelector (C:\Users\w\projects\crawl\testwright\node_modules\playwright\lib\client\page.js:241:21)
+    at screenshot (file:///C:/Users/w/projects/crawl/testwright/src/crawl.js:34:38)
+ERROR: The process with PID 13116 (child process of PID 1860) could not be terminated.
+Reason: The operation attempted is not supported.
+Done in 38.19s.
