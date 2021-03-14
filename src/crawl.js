@@ -29,17 +29,28 @@ export async function screenshot(url = "about:blank", dest = "captures/") {
 
     // const frames = page.frames();
     // console.log(frames.length);
-    const frame = page.frame({ url: /.*consent.google.com.*/ });
+    // const frame = page.frame({ url: /.*consent.google.com.*/ });
     // await frame.waitForLoadState('load');
-    await frame.waitForNavigation();
+    // await frame.waitForNavigation();
+
+    // const frameHandle = await page.$('[src*="consent.google.com"]');
+    // const frame = await frameHandle.contentFrame();
+
     // console.log(frame);
     // console.log('---------------');
 
-    await frames.click('#introAgreeButton');
-    await frames.waitForLoadState('load');
+    // await frame.click('#introAgreeButton');
+    // // await frame.waitForLoadState('load');
+    // await frame.waitForNavigation();
 
-    debugger;
+    // debugger;
     // await page.pause();
+
+    await new Promise((res, rej) => {
+      page.on('dialog', async (dialog) => {
+        res(dialog.accept);
+      });
+    })
 
     await page.screenshot({ path: outpath });
 
